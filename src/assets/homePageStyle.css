@@ -1,0 +1,32 @@
+.logo{
+    width :100%; height: 150px;
+    background : #B93234;
+  }
+
+  .logoName{
+    margin:auto;
+    padding-top:50px;
+    font-size: 50px;
+    color : white;
+    font-weight: bold;
+  }
+
+  .category{
+    background: darkslateblue;
+  }
+  .menues{
+    color: white;
+    font-size:30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left:2%;
+  }
+
+
+  .reservationBtn{
+    background: gray;
+    color:aliceblue;
+    width:50%; height:50px;
+    border-radius: 15px;
+    margin-top: 15%;
+  }

@@ -1,0 +1,120 @@
+  .timeSelectButton{
+    display: flex;
+    margin: 0 auto;
+    font-size: 30px;
+    background: red;
+    color:white;
+    border: none;
+    border-radius: 10%;
+    width: 20%;
+    text-align: center;
+  }
+  .controlButtons{
+    margin-left:-98%;
+    margin-top:-2%;
+  }
+  .roomR{
+    width:85vw;
+    margin-top: 45vh;
+    height:65vh; background: white;
+    border-radius: 8px;
+    padding:1.7%;
+    align-items: center;
+    margin-left:50vw;
+    transform: translate(-50%, -50%);
+  }
+  .exit{
+    display: inline;
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color:red;
+    border: none;
+  }
+  .back{
+    display: inline;
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color:rgb(208, 164, 32);
+    border: none;
+  }
+  .maximize{
+    display: inline;
+    margin-left:0.5%;
+    margin-bottom: 1%;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color:lightgreen;
+    border: none;
+  }
+
+  .exit:active{
+    background-color: rgb(60, 1, 1);
+  }
+  
+  .elevator{
+    background: white;
+    color:white;
+    width: 10%;
+    border:none;
+    margin-left:1%;
+    border-radius: 10%;
+  
+  }
+  
+
+  
+  .roomBtn{
+    width:10%; height: 19%;
+    border:none;
+    background: black;
+    color:white;
+    font-size:30px;
+    margin-left: 1%;
+    border-radius: 10%;
+  }
+  .roomBtnButtom{
+    width:10%; height: 19%;
+    border:none;
+    background: black;
+    color:white;
+    font-size:30px;
+    margin-left:1%;
+    border-radius: 10%;
+  }
+  .black-bg{
+    width:100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+    position:fixed;
+  
+  }
+  .white-bg{
+    margin-top: 45vh;
+    width:75vw; height:65vh; background: white;
+    border-radius: 8px;
+    padding:1.7%;
+    align-items: center;
+    margin-left:50vw;
+    transform: translate(-50%, -50%);
+
+  }
+ 
+ 
+  .floorDiv{
+    background: black;
+    margin-top: -25%;
+    margin-left: 12%;
+  
+  }
+  
+  .floorSelect{
+    width: 100px;
+    height: 100px;
+    float:left;
+  }
