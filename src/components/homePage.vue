@@ -54,7 +54,7 @@
           <button class = "roomBtn" v-for="(a,i) in 4" :key="(a,i)" @click="roomReservation(thirdFloorRoomsOne[i+4])">{{ thirdFloorRoomsTwo[i+4] }}</button>
         </div>
 
-        <div v-if="reservationFlag!=0">
+        <div v-if="reservationFlag != 0">
           <div>
          <a style="float:left; font-size: 50px; font-weight: bold;">ROOM {{ reservationFlag }}</a>
          </div>
