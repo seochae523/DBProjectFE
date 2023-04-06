@@ -1,23 +1,29 @@
 <template>
     <menuBox/>
-    <table class="table">
-      <thead>
-      <tr>
-        <th>No</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>등록일시</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(row, idx) in reviewList" :key="idx">
-        <td>{{ row.idx }}</td>
-        <td><a v-on:click="fnView(`${row.idx}`)">{{ row.title }}</a></td>
-        <td>{{ row.author }}</td>
-        <td>{{ row.created_at }}</td>
-      </tr>
-      </tbody>
-    </table>
+    <form @submit="onSubmitForm">
+        <input class="contextInput" type="text" v-model="contents" style="font-size:30px; white-space: pre-line;">
+        <button class="submitBtn">WRITE</button>
+    </form>
+    
+
+
+   
+   
+      <div v-for="(row, idx) in reviewList" :key="idx">
+        <hr style="margin-top:5%">
+        <div class="info">
+        <a>{{ row.author }} | &nbsp;</a>
+        <a>{{ row.created_at }}</a>
+        </div>
+        <div style="background: rgba(0,0,0,0.1); width: 10%; margin:0 auto">
+            <a style="font-size: 20px;">{{ row.roomNo }}</a>
+        </div>
+        <div>
+        <a class="context">{{ row.context }}</a>
+        </div>
+      </div>
+
+
   </template>
 
 <script>
@@ -29,83 +35,52 @@ components:{
 },
 data(){
     return {
-        context:"",
-        reviewList:[
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        },
-        {
-            "idx":1,
-            "title": "제목1",
-            "author": "작성자1",
-            "created_at": "작성일시1"
-        }
-        ]
+        contents:"",
+        reviewList:[]
     }
 },
 methods:{
     onSubmitForm(e){
         e.preventDefault();
-        this.reviewList.push(this.context)
+        this.reviewList.push({"roomNo":101,
+            "context": this.contents,
+            "author": "작성자1",
+            "created_at": "작성일시1"});
+        
+        this.contents="";
+
     }
 }
 }
 </script>
 <style>
-
+.context{
+    white-space: pre-line;
+    font-size: 30px;
+}
+.info{
+    font-size: 25px;
+}
+.submitBtn{
+ 
+    width: 10%;
+    height: 40px;
+    border-radius: 10px;
+    background: #B93234;
+    opacity: 0.8;
+    color: white;
+    font-size:30px;
+}
 .id{
     border: 2px solid black;
     padding: 3% 10% 3% 10%;
     
 }
-.context{
+.contextInput{
     border: 2px solid black;
-    width: 50%;
+    width: 60%;
+    height: 100px;
+    
 }
 .reviewInputDiv{
     border: 2px solid black;
@@ -145,7 +120,5 @@ td, th {
     padding: 10px;
     border: 1px solid #ccc;
 }
-tr:nth-of-type(even){
-    background-color: rgba(255,0,0,0.1);
-}
+
 </style>

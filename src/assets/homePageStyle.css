@@ -1,6 +1,6 @@
 .logo{
     width :100%; height: 150px;
-    background : #B93234;
+    background : rgba(185,50,52,0.8);
   }
 
   .logoName{
@@ -11,16 +11,6 @@
     font-weight: bold;
   }
 
-  .category{
-    background: darkslateblue;
-  }
-  .menues{
-    color: white;
-    font-size:30px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left:2%;
-  }
 
 
   .reservationBtn{
@@ -29,4 +19,9 @@
     width:50%; height:50px;
     border-radius: 15px;
     margin-top: 15%;
+  }
+
+  .image{
+    margin: 0 auto;
+    
   }

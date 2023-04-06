@@ -40,8 +40,9 @@
     height: 15px;
     width: 15px;
     border-radius: 15px;
-    background-color:rgb(208, 164, 32);
+    background-color:rgb(244, 143, 89);
     border: none;
+    
   }
   .maximize{
     display: inline;
@@ -108,8 +109,8 @@
  
   .floorDiv{
     background: black;
-    margin-top: -25%;
-    margin-left: 12%;
+    margin-top: -20%;
+    margin-left:12%;
   
   }
   
