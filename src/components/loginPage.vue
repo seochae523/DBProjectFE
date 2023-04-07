@@ -4,7 +4,7 @@
       <div>
         <p style="font-size: 30px; font-weight: bold;">SIGN IN</p>
         <div id="loginForm">
-          <form @submit.prevent="fnLogin">
+          <form @submit.prevent="testLogin">
             <p>
               <input class="input" name="uid" placeholder="Enter your ID" v-model="user.id"><br>
             </p>
@@ -21,8 +21,12 @@
   </template>
   
   <script>
-  import menuBox from "./menuBox.vue"
+  import router from "@/router/router"
+import menuBox from "./menuBox.vue"
+
+router
   export default {
+
     data() {
       return {
         user:{
@@ -33,14 +37,18 @@
       }
     },
     methods: {
+      testLogin(){
+        this.isLogin=true;
+        router.push({path: '/'});
+      },
       fnLogin() {
         if (this.user.id === '') {
-          alert('ID를 입력하세요.')
+          alert('Please enter your ID')
           return
         }
   
         if (this.user.pw === '') {
-          alert('비밀번호를 입력하세요.')
+          alert('Please enter your password')
           return
         }
   
@@ -50,10 +58,12 @@
       .then((res) => {
         if (res.data.success == true) {
           alert(res.data.message);
+          this.isLogin=true;
+          router.push({path: '/'});
         }
         if (res.data.success == false) {
           alert(res.data.message);
-          this.isLogin=true;
+          
         }
       })
       .catch(function (error) {

@@ -98,9 +98,14 @@
       <div class ="logo">
         <p class ="logoName">Sejong Hotel</p>
       </div>
-      <div>
+      <br>
+        <div class = "cheakInInfo">
+        <h1>Check-In time  16 : 00</h1>
+        <h1>Check-Out time 11 : 00</h1>
+        </div>
+        
         <button class="reservationBtn" @click="showTimeSelect()">reservation</button>
-      </div>
+   
   
   
   </template>
@@ -225,7 +230,7 @@ import {  DatePicker } from 'v-calendar';
       text-align: center;
       color: #2c3e50;
     }
-
+  
   @import "@/assets/modalStyle.css";
   @import "@/assets/homePageStyle.css";
   </style>

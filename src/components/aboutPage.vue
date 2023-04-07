@@ -2,8 +2,8 @@
   <menuBox/>
 <h1>aboutPage</h1>
 <h1>frontend :  vue.js</h1>
-<h1>backend : mssql</h1>
-<h1>reference :  야놀자</h1>
+<h1>backend : vue-express + mysql</h1>
+<h1>reference : 야놀자</h1>
   </template>
 
   <script>
