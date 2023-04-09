@@ -5,6 +5,7 @@ import reviewPage from "@/components/reviewPage";
 import myPage from "@/components/myPage";
 import registerPage from "@/components/registerPage"
 import loginPage from "@/components/loginPage"
+
 const router = createRouter({
 
     history : createWebHistory(),

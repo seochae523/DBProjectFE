@@ -14,6 +14,7 @@
             <p>
               <button type="submit" class="loginButton">Login</button>
             </p>
+            <a>{{this.$store.state.userStore.isLogin}}</a>
           </form>
         </div>
       </div>
@@ -22,7 +23,7 @@
   
   <script>
   import router from "@/router/router"
-import menuBox from "./menuBox.vue"
+  import menuBox from "./menuBox.vue"
 
 router
   export default {
@@ -31,15 +32,16 @@ router
       return {
         user:{
         id: '',
-        pw: ''
-        },
+        pw: '',
         isLogin: false,
+        },
       }
     },
     methods: {
       testLogin(){
-        this.isLogin=true;
-        router.push({path: '/'});
+        this.user.isLogin=true;
+        this.$store.commit("testLogin", this.user)
+        router.push({path:'/'});
       },
       fnLogin() {
         if (this.user.id === '') {
@@ -57,9 +59,10 @@ router
       })
       .then((res) => {
         if (res.data.success == true) {
+          this.user.isLogin=true;
           alert(res.data.message);
-          this.isLogin=true;
-          router.push({path: '/'});
+          this.$store.commit("login", res.data);
+          router.push({path:'/'});
         }
         if (res.data.success == false) {
           alert(res.data.message);
