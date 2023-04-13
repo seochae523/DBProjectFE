@@ -103,7 +103,7 @@
         <h1>Check-In time  16 : 00</h1>
         <h1>Check-Out time 11 : 00</h1>
         </div>
-        
+        <a>{{this.$store.state.userStore.isLogin}}</a>
         <button class="reservationBtn" @click="showTimeSelect()">reservation</button>
    
   
@@ -199,7 +199,6 @@ import {  DatePicker } from 'v-calendar';
         this.timeSelectFlag=0
         this.reservationFlag=0
         this.payment=''
-
       },
       reservation(){
         if(this.payment == ''){
@@ -207,13 +206,14 @@ import {  DatePicker } from 'v-calendar';
 
         }
         else{
+          
           alert('reservation complite!')
           this.exit()
         }
-      }
-
+      },
       
     },
+
     components: {
       DatePicker,
       menuBox,

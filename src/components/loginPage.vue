@@ -4,7 +4,7 @@
       <div>
         <p style="font-size: 30px; font-weight: bold;">SIGN IN</p>
         <div id="loginForm">
-          <form @submit.prevent="testLogin">
+          <form @submit.prevent="fnLogin">
             <p>
               <input class="input" name="uid" placeholder="Enter your ID" v-model="user.id"><br>
             </p>
@@ -61,7 +61,7 @@ router
         if (res.data.success == true) {
           this.user.isLogin=true;
           alert(res.data.message);
-          this.$store.commit("login", res.data);
+          this.$store.commit("login", this.user);
           router.push({path:'/'});
         }
         if (res.data.success == false) {
