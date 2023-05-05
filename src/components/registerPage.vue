@@ -27,7 +27,6 @@
       </div>
       <button class="submitButton" @click="signUp" >submit</button>
 
-
 </template>
 
 <script>
@@ -45,6 +44,7 @@ export default {
 			password: '',
 			passwordConfirm: '',
       },
+      index : 0
 		}
 	},
 	methods: {

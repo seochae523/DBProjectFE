@@ -4,7 +4,7 @@
       <div>
         <p style="font-size: 30px; font-weight: bold;">SIGN IN</p>
         <div id="loginForm">
-          <form @submit.prevent="fnLogin">
+          <form @submit.prevent="login">
             <p>
               <input class="input" name="uid" placeholder="Enter your ID" v-model="user.id"><br>
             </p>
@@ -39,11 +39,12 @@ router
     },
     methods: {
       testLogin(){
-        this.user.isLogin=true;
-        this.$store.commit("testLogin", this.user)
-        router.push({path:'/'});
+        this.user.id = 'test123';
+        this.user.pw = 'testpw123';
+        this.user.isLogin = true;
+        this.$store.commit("testLogin", this.user);
       },
-      fnLogin() {
+      login() {
         if (this.user.id === '') {
           alert('Please enter your ID')
           return
