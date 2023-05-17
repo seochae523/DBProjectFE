@@ -14,7 +14,7 @@
         <span v-else>☆</span>
       </div>
     
-    <!-- 로컬에 저장까지는 완료! -->
+
       <div v-for="(row, idx) in $store.state.review.review" :key="idx">
         <hr style="margin-top:5%">
         <div class="info">

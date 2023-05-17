@@ -4,7 +4,7 @@
         <router-link to="/" class="menues">HOME</router-link>
         <router-link to="/review" class="menues" @click="getReviews">REVIEW</router-link>
         <router-link to="/about" class="menues">ABOUT</router-link>
-        <router-link to="/myPage" class="menues" v-if="this.$store.state.userStore.isLogin">MYPAGE</router-link>
+        <router-link to="/myPage" class="menues" v-if="this.$store.state.userStore.isLogin" @click="getInfo">MYPAGE</router-link>
     </div>
     <div class="login" v-if="this.$store.state.userStore.isLogin == false">
         <router-link to="/login" class="login">SIGN IN</router-link>
@@ -13,7 +13,7 @@
     <div class="login" v-else>
         <button @click="logout">logout</button>
     </div>
-    <a>{{this.$store.state.userStore.isLogin}}</a>
+    <a>{{this.$store.state.userStore.userId}} {{ this.$store.state.userStore.userPw }}</a>
  </div>
 <br>
 </template>
@@ -32,11 +32,12 @@ export default {
             contents : '',
             roomNumber: 0,
             id : '',
-            date : 0,
+            start: 0,
             name : '',
-            reviewNumber:0
+            end : 0,
             },
-            reviewList: []
+            reviewList: [],
+            reservationInfo: {}
         }
     },
     methods: {
@@ -58,6 +59,22 @@ export default {
         .catch((err) => {
             alert(err)
         })
+      },
+      getInfo(){
+        this.info.id = this.$store.state.userStore.userId;
+        this.$axios.post('/myPage/data', {
+            info : this.info
+        })
+        .then((res) => {
+            // body 가는데 res 오는게 안된다.
+            this.reservationInfo = res.data.info
+            console.log(this.reservationInfo)
+            this.$store.commit('getReservationInfo', this.reservationInfo)
+        })
+        .catch((err) =>{
+            alert(err + 'erraddd')
+        });
+        
       }
     },
 

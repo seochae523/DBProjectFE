@@ -5,7 +5,8 @@ const userStore = {
         userId: '',
         userName: '',
         userPw: '',
-        isLogin: false
+        isLogin: false,
+        reservationInfo:[]
     },
     mutations: {
         testLogin: function(state, payload){
@@ -21,6 +22,11 @@ const userStore = {
         
         logOut: function(state){
             state.isLogin=false;
+            state.userId = '';
+            state.userPw = '';
+        },
+        getReservationInfo: function(state, payload){
+            state.reservationInfo = payload
         }
 
     }
