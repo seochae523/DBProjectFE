@@ -4,7 +4,7 @@
       <div>
         <p style="font-size: 30px; font-weight: bold;">SIGN IN</p>
         <div id="loginForm">
-          <form @submit.prevent="login">
+          <form @submit.prevent="testLogin">
             <p>
               <input class="input" name="uid" placeholder="Enter your ID" v-model="user.id"><br>
             </p>

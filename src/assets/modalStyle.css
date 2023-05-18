@@ -26,7 +26,7 @@
   }
   .exit{
     display: inline;
-    margin-left: 0.5%;
+    margin-left: -0.5%;
     margin-bottom: 1%;
     height: 15px;
     width: 15px;
@@ -36,15 +36,27 @@
   }
   .back{
     display: inline;
-    margin-left: 0.5%;
+    margin-left: 0.3%;
     margin-bottom: 1%;
     height: 15px;
     width: 15px;
     border-radius: 15px;
-    background-color:rgb(244, 143, 89);
+    background-color:rgb(245, 191, 79);
     border: none;
     
   }
+  .nothing{
+    display: inline;
+    margin-left: 0.3%;
+    margin-bottom: 1%;
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color:rgb(97, 197, 84);
+    border: none;
+    
+  }
+
   .maximize{
     display: inline;
     margin-left:0.5%;
@@ -57,7 +69,10 @@
   }
 
   .exit:active{
-    background-color: rgb(60, 1, 1);
+    background-color: rgb(240, 147, 137);
+  }
+  .back:active{
+    background-color: rgb(252, 234, 116);
   }
   
   .elevator{
@@ -113,13 +128,19 @@
  
  
   .floorDiv{
-    background: black;
-    margin-top: -20%;
-    margin-left: 10%;
+
+
   }
   
   .floorSelect{
     width: 100px;
-    height: 100px;
-    float:left;
+    height: 50px;
+    border: none;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 1%;
+  }
+
+  .floorSelect:active{
+    background-color: darkgray;
   }
