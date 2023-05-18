@@ -13,7 +13,7 @@
     <div class="login" v-else>
         <button @click="logout">logout</button>
     </div>
-    <a>{{this.$store.state.userStore.userId}} {{ this.$store.state.userStore.userPw }}</a>
+
  </div>
 <br>
 </template>
@@ -37,7 +37,8 @@ export default {
             end : 0,
             },
             reviewList: [],
-            reservationInfo: {}
+            reservationInfo: {},
+            coupons:[]
         }
     },
     methods: {
@@ -66,16 +67,16 @@ export default {
             info : this.info
         })
         .then((res) => {
-            // body 가는데 res 오는게 안된다.
             this.reservationInfo = res.data.info
             console.log(this.reservationInfo)
             this.$store.commit('getReservationInfo', this.reservationInfo)
         })
         .catch((err) =>{
-            alert(err + 'erraddd')
+            alert(err)
         });
         
-      }
+      },
+
     },
 
 

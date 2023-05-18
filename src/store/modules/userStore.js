@@ -6,9 +6,10 @@ const userStore = {
         userName: '',
         userPw: '',
         isLogin: false,
-        reservationInfo:[]
+
     },
     mutations: {
+
         testLogin: function(state, payload){
             state.userId = payload.id
             state.userPw = payload.pw
@@ -25,8 +26,9 @@ const userStore = {
             state.userId = '';
             state.userPw = '';
         },
-        getReservationInfo: function(state, payload){
-            state.reservationInfo = payload
+    
+        getCoupons: function(state, payload){
+            state.coupons = payload
         }
 
     }

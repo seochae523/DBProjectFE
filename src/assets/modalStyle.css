@@ -1,5 +1,4 @@
   .timeSelectButton{
-
     margin: 0 auto;
     margin-top:12%;
     font-size: 30px;
@@ -23,6 +22,7 @@
     align-items: center;
     margin-left:50vw;
     transform: translate(-50%, -50%);
+    overflow: auto;
   }
   .exit{
     display: inline;
@@ -81,6 +81,10 @@
     margin-left: 1%;
     border-radius: 10%;
   }
+  .roomBtn:disabled{
+    background: gray;
+    color: darkgray;
+  }
   .roomBtnButtom{
     width:10%; height: 19%;
     border:none;
@@ -111,8 +115,7 @@
   .floorDiv{
     background: black;
     margin-top: -20%;
-    margin-left:12%;
-  
+    margin-left: 10%;
   }
   
   .floorSelect{
